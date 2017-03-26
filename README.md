@@ -3,7 +3,7 @@ _PowSpec_EFTofLSS_ performs the calculation of the redshift space power spectra 
 The serial C++ code performs all the 1-loop computations required for both the real space and redshift space dark matter power spectra. 
 A resummation procedure is also implemented to account for the effect of velocity displacements which are poorly controlled in the Standard
 Perturbation Theory framework. A useful .ini file format is utilised. That tool is due to *Ben Hoyt* and if you find it useful I encourage you to have a better look [here](https://github.com/benhoyt/inih/). All that is required is the definition of output directories, and specification
-of 3 input power spectra, assumed to be in the same format as [CAMB](https://github.com/cmbant/CAMB).
+of 3 input power spectra, assumed to be in the same format as [CAMB](https://github.com/cmbant/CAMB). The MathematicaSheets/ subdirectory summaries the analytic calculation of the RSD power spectra to one-loop, including the derivation of the required Fabrikant formulae for evaluation of the three-Bessel integrals for the 22-type terms.
 
 Expect to see more bells and whistles as time progresses. Any contributions to the continued development of this package are very welcome. An independent pipeline
 implementing the same program by David Seery may be found [here](https://github.com/ds283/LSSEFT).
