@@ -8,6 +8,29 @@
 
 #include "output_routines.hpp"
 using namespace std;
+
+void output_RSD_13_22_mu2n(int numpts,import_class &imports,double f,Splining &PowL,std::vector<Splining>&P13dsds, std::vector<Splining>&P22dsds){
+    string filename=imports.get_finaldata().baseoutputs+"Pk_RSD_contribs_z"+to_string(imports.get_finaldata().zfinal)+".csv";
+    
+    double kmin=imports.get_finaldata().kminCalc,kmax=imports.get_finaldata().kmaxCalc;
+    vector<double>kvals;
+    create_vec(kmin, kmax, numpts, kvals, logScale);
+    
+    std::ofstream myfile(filename);
+    if (!myfile.is_open()) {
+        std::cout<<"Problem opening file "<<filename<<std::endl;
+        return;
+    }
+    myfile<<"kvalue"<<","<<"Ptree_mu0"<<","<<"P13_mu0"<<","<<"P22_mu0"<<","<<"Ptree_mu2"<<","<<"P13_mu2"<<","<<"P22_mu2"<<","<<"Ptree_mu4"<<","<<"P13_mu4"<<","<<"P22_mu4"<<'\n';
+    for (int i=0; i<kvals.size(); i++) {
+        myfile<<kvals[i]<<","<<PowL.get_yval(kvals[i])<<","<<P13dsds[0].get_yval(kvals[i])<<","<<P22dsds[0].get_yval(kvals[i])<<",";
+        myfile<<2*f*PowL.get_yval(kvals[i])<<","<<P13dsds[1].get_yval(kvals[i])<<","<<P22dsds[1].get_yval(kvals[i])<<",";
+        myfile<<f*f*PowL.get_yval(kvals[i])<<","<<P13dsds[2].get_yval(kvals[i])<<","<<P22dsds[2].get_yval(kvals[i])<<std::scientific<<"\n";
+        
+    }
+    myfile.close();
+}
+
 void output_DM_powspec(int numpts, import_class &imports,IR_Resum &irresum){
     string filename_IR=imports.get_finaldata().baseoutputs+"Pk_DM_z"+to_string(imports.get_finaldata().zfinal)+".csv";
     string filename_nonIR=imports.get_finaldata().baseoutputs+"Pk_DM_IR_z"+to_string(imports.get_finaldata().zfinal)+".csv";
@@ -50,28 +73,30 @@ void output_RSD_powspec(int numpts,import_class &imports,IR_Resum_RSD &irresum_r
     vector<double>kvals;
     create_vec(kmin, kmax, numpts, kvals, logScale);
     Splining PowL_IR=irresum_rsd.get_PowL_IR();
+    Splining PowL_nw=irresum_rsd.get_PowL_nw();
     Splining PowL_nonIR=irresum_rsd.get_PowL();
     vector<Splining>PowRSD_nonIR(3),PowRSD_IR(3);
     for (int i=0; i<3; i++) {
         PowRSD_nonIR[i]=irresum_rsd.get_RSD_1loop_nonIR(2*i);
         PowRSD_IR[i]=irresum_rsd.get_RSD_1loop_IR(2*i);
     }
-    output_RSD_values(filename_IR, kvals, PowL_IR, PowRSD_IR);
-    output_RSD_values(filename_nonIR, kvals, PowL_nonIR, PowRSD_nonIR);
+    output_RSD_values(filename_IR, kvals, PowL_IR,PowL_nw, PowRSD_IR);
+    output_RSD_values(filename_nonIR, kvals, PowL_nonIR,PowL_nw, PowRSD_nonIR);
 
 }
-void output_RSD_values(string filename,vector<double>kvals,Splining PowL,vector<Splining> PowRSD){
+void output_RSD_values(string filename,vector<double>kvals,Splining PowL,Splining PowL_nw,vector<Splining> PowRSD){
     std::ofstream myfile(filename);
     if (!myfile.is_open()) {
         std::cout<<"Problem opening file "<<filename<<std::endl;
         return;
     }
-    myfile<<"kvalue"<<","<<"PkL"<<","<<"PkIR_ell_0"<<","<<"PkIR_ell_2"<<","<<"PkIR_ell_4"<<'\n';
+    myfile<<"kvalue"<<","<<"PkL"<<","<<"PkL_nw"<<","<<"PkIR_ell_0"<<","<<"PkIR_ell_2"<<","<<"PkIR_ell_4"<<'\n';
     for (int i=0; i<kvals.size(); i++) {
-        myfile<<kvals[i]<<","<<PowL.get_yval(kvals[i])<<","<<PowRSD[0].get_yval(kvals[i])<<","<<PowRSD[1].get_yval(kvals[i])<<","<<PowRSD[2].get_yval(kvals[i])<<std::scientific<<"\n";
+        myfile<<kvals[i]<<","<<PowL.get_yval(kvals[i])<<","<<PowL_nw.get_yval(kvals[i])<<","<<PowRSD[0].get_yval(kvals[i])<<","<<PowRSD[1].get_yval(kvals[i])<<","<<PowRSD[2].get_yval(kvals[i])<<std::scientific<<"\n";
     }
     myfile.close();
 }
+
 
 
 void output_timedep_cts(import_class &imports,Coeffs &coeffs){

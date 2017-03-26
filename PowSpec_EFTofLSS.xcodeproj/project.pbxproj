@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		B74C0D341E5EFAB2002371EA /* PowDM_SPT_Resummation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B74C0D321E5EFAB2002371EA /* PowDM_SPT_Resummation.cpp */; };
 		B74C0D381E5F1CB6002371EA /* PowSpecRSD_SPT.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B74C0D361E5F1CB6002371EA /* PowSpecRSD_SPT.cpp */; };
-		B74C0D3B1E5F4568002371EA /* numbers2strings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B74C0D391E5F4568002371EA /* numbers2strings.cpp */; };
 		B74C0D3E1E5F584D002371EA /* PowSpecRSD_SPT_resummation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B74C0D3C1E5F584D002371EA /* PowSpecRSD_SPT_resummation.cpp */; };
 		B74C0D421E6057E9002371EA /* output_routines.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B74C0D401E6057E9002371EA /* output_routines.cpp */; };
 		B74C0D461E60757A002371EA /* fitting_routine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B74C0D441E60757A002371EA /* fitting_routine.cpp */; };
@@ -44,8 +43,6 @@
 		B74C0D331E5EFAB2002371EA /* PowDM_SPT_Resummation.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = PowDM_SPT_Resummation.hpp; sourceTree = "<group>"; };
 		B74C0D361E5F1CB6002371EA /* PowSpecRSD_SPT.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PowSpecRSD_SPT.cpp; sourceTree = "<group>"; };
 		B74C0D371E5F1CB6002371EA /* PowSpecRSD_SPT.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = PowSpecRSD_SPT.hpp; sourceTree = "<group>"; };
-		B74C0D391E5F4568002371EA /* numbers2strings.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = numbers2strings.cpp; sourceTree = "<group>"; };
-		B74C0D3A1E5F4568002371EA /* numbers2strings.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = numbers2strings.hpp; sourceTree = "<group>"; };
 		B74C0D3C1E5F584D002371EA /* PowSpecRSD_SPT_resummation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PowSpecRSD_SPT_resummation.cpp; sourceTree = "<group>"; };
 		B74C0D3D1E5F584D002371EA /* PowSpecRSD_SPT_resummation.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = PowSpecRSD_SPT_resummation.hpp; sourceTree = "<group>"; };
 		B74C0D401E6057E9002371EA /* output_routines.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = output_routines.cpp; sourceTree = "<group>"; };
@@ -187,8 +184,6 @@
 				B781E3FD1E5DFD7600DFD54D /* integration_routine.cpp */,
 				B781E3FE1E5DFD7600DFD54D /* integration_routine.hpp */,
 				B781E3FB1E5DFA6200DFD54D /* splining_routines.hpp */,
-				B74C0D391E5F4568002371EA /* numbers2strings.cpp */,
-				B74C0D3A1E5F4568002371EA /* numbers2strings.hpp */,
 				B781E3FA1E5DFA6200DFD54D /* splining_routines.cpp */,
 			);
 			name = UsefulRoutines;
@@ -264,7 +259,6 @@
 				B74C0D341E5EFAB2002371EA /* PowDM_SPT_Resummation.cpp in Sources */,
 				B781E3F21E5DE54800DFD54D /* ini.c in Sources */,
 				B74C0D3E1E5F584D002371EA /* PowSpecRSD_SPT_resummation.cpp in Sources */,
-				B74C0D3B1E5F4568002371EA /* numbers2strings.cpp in Sources */,
 				B781E3FF1E5DFD7600DFD54D /* integration_routine.cpp in Sources */,
 				B781E3FC1E5DFA6200DFD54D /* splining_routines.cpp in Sources */,
 				B781E40A1E5E244400DFD54D /* Fabrikant.cpp in Sources */,

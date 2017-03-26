@@ -10,7 +10,10 @@
 #define PowSpecRSD_SPT_hpp
 
 #include <stdio.h>
+#include <fstream>
+#include <sstream>
 #include "PowDM_SPT.hpp"
+
 //Much of the formulae here are in the Mathematica notebooks FabrikantImplemented.nb and RSD_Checks.nb
 
 class p13CalcRSD{

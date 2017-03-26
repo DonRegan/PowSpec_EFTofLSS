@@ -12,6 +12,7 @@
 #include <stdio.h>
 #include "PowDM_SPT_Resummation.hpp"
 #include "PowSpecRSD_SPT.hpp"
+void output_RSD_13_22_mu2n(int numpts,import_class &imports,double f,Splining &PowL,std::vector<Splining>&P13dsds, std::vector<Splining>&P22dsds);//function defined in output_routines.cpp
 
 class IR_Resum_RSD{
 private:
@@ -33,5 +34,11 @@ public://access routines
     Splining get_RSD_1loop_nonIR(int legMode);
     Splining get_PowL(){return PowL;}
     Splining get_PowL_IR(){return PowL_IR;}
+    Splining get_PowL_nw(){return PowL_nw;}
+    void output_PowSpec_contribs(int numpts,import_class &imports){
+        output_RSD_13_22_mu2n(numpts, imports, f, PowL,P13dsds , P22dsds);
+    }
+
 };
+
 #endif /* PowSpecRSD_SPT_resummation_hpp */

@@ -15,7 +15,6 @@
 #include "import_powerspectra.hpp"
 #include "Fabrikant.hpp"
 #include "Wiggle_NoWiggle.hpp"
-#include "numbers2strings.hpp"
 
 class p13CalcRSD;
 class p22CalcRSD;

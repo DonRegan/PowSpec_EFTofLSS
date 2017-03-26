@@ -26,6 +26,7 @@ IR_Resum_RSD::IR_Resum_RSD(IR_Resum &irresum){
         P22dsds_nw[n]=p22RSD_nw.get_P22RSD(2*n);
 
     }
+    
     P22dsds[4]=p22RSD.get_P22RSD(8);
     P22dsds_nw[4]=p22RSD_nw.get_P22RSD(8);
     calc_wiggle_contribs();

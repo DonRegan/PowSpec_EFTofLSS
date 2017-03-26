@@ -197,7 +197,7 @@ void solvesystem(Coeffs &coeffs_info){
         assert(status==GSL_SUCCESS);
     }
     for (int i=0; i<odesize; i++) {
-        //cout<<"ysol "<<i<<'\t'<<ysolution[i]<<'\n';
+        cout<<"ysol "<<i<<'\t'<<ysolution[i]<<'\n';
         ysol.push_back(ysolution[i]);
     }
     coeffs_info.set_yfinal(ysol);

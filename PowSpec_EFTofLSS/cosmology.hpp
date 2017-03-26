@@ -24,7 +24,7 @@ private:
     std::vector<double>kvec;
     Splining PowL;
 public:
-    Cosmology_FLRW(cosmolInfo cosmolIn=cosmolInfo(),double Neff_in=3.15,double kpivotIn=0.05);//setting defaults for the latter two values
+    Cosmology_FLRW(cosmolInfo cosmolIn=cosmolInfo(),double Neff_in=3.046,double kpivotIn=0.05);//setting defaults for the latter two values
     void set_othervals();
 public://access routines
     double get_OmegaM(){return OmegaM;}

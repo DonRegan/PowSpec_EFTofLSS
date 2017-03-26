@@ -30,6 +30,7 @@ int main(int argc, const char * argv[]) {
     
     /****** Calculation + Resummation of the RSD Power Spectra ******/
     IR_Resum_RSD irresum_rsd(irresum);
+    irresum_rsd.output_PowSpec_contribs(100, imports);
     
     /***** Outputs here ******/
     output_DM_powspec(1000,imports,irresum);

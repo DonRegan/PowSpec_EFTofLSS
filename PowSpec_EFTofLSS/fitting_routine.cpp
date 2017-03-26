@@ -66,8 +66,8 @@ double fit_cssquared(int numpts,double kmin,double kmax,import_class imports,IR_
         P_tofit_IR[i]=PowNL.get_yval(kvals[i])-Pow1loop_IR.get_yval(kvals[i]) ;
         P_tofit_nonIR[i]=PowNL.get_yval(kvals[i])-Pow1loop_nonIR.get_yval(kvals[i]) ;
 
-        P_tofit_IR[i]/=-kvals[i]*kvals[i]*PowL_IR.get_yval(kvals[i]);
-        P_tofit_nonIR[i]/=-kvals[i]*kvals[i]*PowL_IR.get_yval(kvals[i]);
+        P_tofit_IR[i]/=-2.*kvals[i]*kvals[i]*PowL_IR.get_yval(kvals[i]);
+        P_tofit_nonIR[i]/=-2.*kvals[i]*kvals[i]*PowL_IR.get_yval(kvals[i]);
     }
     int deg(1),degstart(0);
     std::vector<double>alpha_IRfit,alpha_nonIRfit;
@@ -106,7 +106,7 @@ void fit_cssquared_2(int numpts,double kmin,double kmax,import_class imports,IR_
         std::vector<double>alpha;
         for (int i=0; i<numpts; i++) {
             PkNL_realisation[i]=distribution[i](gen);
-            P_tofit[i]=-(PkNL_realisation[i]-Pow1loop_IR.get_yval(kvals[i]))/(kvals[i]*kvals[i]*PowL_IR.get_yval(kvals[i]));
+            P_tofit[i]=-(PkNL_realisation[i]-Pow1loop_IR.get_yval(kvals[i]))/(2.*kvals[i]*kvals[i]*PowL_IR.get_yval(kvals[i]));
         }
         polynomialfit(numpts, degstart,deg, kvals, P_tofit, alpha);
         double cs_sq_realisation=alpha[0];

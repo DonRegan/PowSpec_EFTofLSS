@@ -42,7 +42,10 @@ p13CalcDM::p13CalcDM(import_class imports,Coeffs &coeffsIn,int numevalsIn,NoWigg
     boost::timer t;
     calc_Jn_vectors();
     P13DM=calc_P13KKtypical(D-J,E,F+J,G,-J,J/2.);
-    std::cout<<"calculations of P13_DM done in  "<<t.elapsed()<<" seconds" <<std::endl;
+    static int number=0;
+    number++;
+    std::cout<<"calculations of P13_DM done ("<<number<<" of 2) in  "<<t.elapsed()<<" seconds" <<std::endl;
+
     p13_DM_spline=Splining(kvals, P13DM);
 }
 
@@ -156,7 +159,10 @@ p22calcDM::p22calcDM(import_class imports,Coeffs &coeffsIn,int numevalsIn,NoWigg
     for (int i=0; i<numpts; i++) {
         P22_DM[i]=integrate_over_q(kvals[i], kmin, kmax, &P22DMintegrand_r, &g);
     }
-    std::cout<<"calculations of P22_DM done in  "<<t.elapsed()<<" seconds" <<std::endl;
+    static int number=0;
+    number++;
+
+    std::cout<<"calculations of P22_DM done ("<<number<<" of 2) in "<<t.elapsed()<<" seconds" <<std::endl;
     
     P22_DM_spline=Splining(kvals, P22_DM);
 }
