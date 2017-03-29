@@ -32,8 +32,8 @@ void output_RSD_13_22_mu2n(int numpts,import_class &imports,double f,Splining &P
 }
 
 void output_DM_powspec(int numpts, import_class &imports,IR_Resum &irresum){
-    string filename_IR=imports.get_finaldata().baseoutputs+"Pk_DM_z"+to_string(imports.get_finaldata().zfinal)+".csv";
-    string filename_nonIR=imports.get_finaldata().baseoutputs+"Pk_DM_IR_z"+to_string(imports.get_finaldata().zfinal)+".csv";
+    string filename_IR=imports.get_finaldata().baseoutputs+"Pk_DM_IR_z"+to_string(imports.get_finaldata().zfinal)+".csv";
+    string filename_nonIR=imports.get_finaldata().baseoutputs+"Pk_DM_z"+to_string(imports.get_finaldata().zfinal)+".csv";
 
     Splining PkDM_nonIR=irresum.get_nonIR_DM();
     Splining PkDM_IR=irresum.get_IR_DM();
@@ -66,8 +66,8 @@ void output_DM_values(string filename,vector<double>kvals,Splining Pk1loop,Splin
 }
 
 void output_RSD_powspec(int numpts,import_class &imports,IR_Resum_RSD &irresum_rsd){
-    string filename_IR=imports.get_finaldata().baseoutputs+"Pk_RSD_z"+to_string(imports.get_finaldata().zfinal)+".csv";
-    string filename_nonIR=imports.get_finaldata().baseoutputs+"Pk_RSD_IR_z"+to_string(imports.get_finaldata().zfinal)+".csv";
+    string filename_nonIR=imports.get_finaldata().baseoutputs+"Pk_RSD_z"+to_string(imports.get_finaldata().zfinal)+".csv";
+    string filename_IR=imports.get_finaldata().baseoutputs+"Pk_RSD_IR_z"+to_string(imports.get_finaldata().zfinal)+".csv";
 
     double kmin=imports.get_finaldata().kminCalc,kmax=imports.get_finaldata().kmaxCalc;
     vector<double>kvals;
