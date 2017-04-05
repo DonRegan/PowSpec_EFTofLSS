@@ -13,7 +13,7 @@ This version of _PowSpec_EFTofLSS_ has been written by Donough Regan at the Univ
 # Releases
 The current release of PowSpec_EFTofLSS is 2017.1. This release can be identified via a DOI linking to a deposit at zenodo.org. That same .tar.gz archives for each release are available directly from GitHub, but for citations please use the zenodo.org versions.
 
-2017.1 (x March 2017) Source code DOI:xxx
+2017.1 (5 April 2017) Source code DOI:10.5281/zenodo.495113
 
 # Licensing
 
